@@ -2,9 +2,7 @@
 - hosts: vms
   gather_facts: no
   become: yes
-  tasks:
-    - name: list virtual machines
-      ansible.builtin.import_role:
-        name: vms
-      vars:
-        method: "list"
+  roles:
+    - role: vms
+  vars:
+    method: "list"
