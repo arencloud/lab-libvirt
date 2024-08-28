@@ -1,0 +1,9 @@
+- name: get vms list
+  community.libvirt.virt:
+    command: list_vms
+  register: existing_vms
+  changed_when: no
+
+- name: print vm
+  ansible.builtin.debug:
+    msg: "{{ existing_vms }}"
