@@ -13,9 +13,9 @@ spec:
   clusterDeploymentRef:
     name: prod
   imageSetRef:
-    name: openshift-v4.11.17
+    name: openshift-v4.16.18
   #  manifestsConfigMapRef:
-  #    name: ztp-spoke-01
+  #    name: prod
   networking:
     clusterNetwork:
       - cidr: 10.128.0.0/14
