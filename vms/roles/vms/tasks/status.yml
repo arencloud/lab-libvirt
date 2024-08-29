@@ -1,0 +1,10 @@
+---
+- name: vm info
+  community.libvirt.virt:
+    name: "{{ vmname }}"
+    command: info
+  register: running_vms
+
+- name: print vm
+  ansible.builtin.debug:
+    msg: "{{ running_vms }}"
