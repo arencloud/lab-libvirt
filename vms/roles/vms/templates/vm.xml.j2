@@ -40,6 +40,7 @@
       <source file='/home/egevorky/VMS/{{ vmname }}-{{ item }}.qcow2' index='2'/>
       <backingStore/>
       <target dev='vda' bus='virtio'/>
+      <boot order='1'/>
       <alias name='virtio-disk0'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </disk>
@@ -49,6 +50,7 @@
       <backingStore/>
       <target dev='sda' bus='sata'/>
       <readonly/>
+      <boot order='2'/>
       <alias name='sata0-0-0'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
