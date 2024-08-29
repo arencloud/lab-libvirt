@@ -7,4 +7,4 @@
 
 - name: print vm
   ansible.builtin.debug:
-    msg: "{{ running_vms }}"
+    msg: "{{ running_vms.get_xml | xml_to_json }}"
