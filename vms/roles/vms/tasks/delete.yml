@@ -3,7 +3,7 @@
 - name: remove virtual machines
   community.libvirt.virt:
     name: "{{ vmname }}-{{ item }}"
-    state: destroyed
+    state: shutdown
     command: destroy
     force: true
   when: count is defined
@@ -12,7 +12,7 @@
 - name: remove virtual machine
   community.libvirt.virt:
     name: "{{ vmname }}"
-    state: destroyed
+    state: shutdown
     command: destroy
     force: true
   when: count is undefined
