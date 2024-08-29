@@ -4,6 +4,7 @@
   community.libvirt.virt:
     name: "{{ vmname }}-{{ item }}"
     state: destroyed
+    command: destroy
     force: true
   when: count is defined
   loop: "{{ range(0, count)|list }}"
@@ -12,5 +13,6 @@
   community.libvirt.virt:
     name: "{{ vmname }}"
     state: destroyed
+    command: destroy
     force: true
   when: count is undefined
