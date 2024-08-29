@@ -2,7 +2,7 @@
 - name: vm info
   community.libvirt.virt:
     name: "{{ vmname }}"
-    command: info
+    command: nodeinfo
   register: running_vms
 
 - name: print vm
