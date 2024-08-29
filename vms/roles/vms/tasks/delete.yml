@@ -1,0 +1,13 @@
+---
+
+- name: remove virtual machines
+  community.libvirt.virt:
+    name: "{{ vmname }}-{{ item }}"
+    force: true
+  when: count is defined
+  loop: "{{ range(0, count)|list }}"
+
+- name: remove virtual machine
+  community.libvirt.virt:
+    name: "{{ vmname }}"
+    force: true
