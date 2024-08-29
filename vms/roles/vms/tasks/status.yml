@@ -7,4 +7,4 @@
 
 - name: print vm
   ansible.builtin.debug:
-    msg: "{{ running_vms.get_xml | ansible.utils.from_xml(''xmltodict'') }}"
+    msg: "{{ running_vms.get_xml | ansible.utils.from_xml }}"
