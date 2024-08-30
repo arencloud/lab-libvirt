@@ -3,5 +3,7 @@ kind: Secret
 metadata:
   name: bmc-secret
   namespace: prod
-data: {}
+data:
+  username: $(BMCUSER)
+  password: $(BMCPWD)
 type: Opaque

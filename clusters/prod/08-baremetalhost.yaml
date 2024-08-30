@@ -1,0 +1,21 @@
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "prod"
+  labels:
+    infraenvs.agent-install.openshift.io: "prod"
+  name: prod
+  namespace: prod
+spec:
+  automatedCleaningMode: metadata
+  rootDeviceHints:
+    deviceName: /dev/vda
+  bmc:
+    address: redfish-virtualmedia+http://192.168.100.1:8000/redfish/v1/Systems/$(UUID)
+    credentialsName: bmc-secret
+    disableCertificateVerification: true
+  bootMACAddress: '52:54:00:98:ab:85'
+  bootMode: UEFI
+  online: true

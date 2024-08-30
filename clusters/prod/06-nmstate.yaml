@@ -1,0 +1,37 @@
+apiVersion: agent-install.openshift.io/v1beta1
+kind: NMStateConfig
+metadata:
+  name: prod
+  namespace: prod
+  labels:
+    cluster-name: prod
+spec:
+  config:
+    dns-resolver:
+      config:
+        search:
+          - arencloud.com
+        server:
+          - 192.168.122.220
+    interfaces:
+      - ipv4:
+          address:
+            - ip: 192.168.110.10
+              prefix-length: 24
+          dhcp: false
+          enabled: true
+        ipv6:
+          enabled: false
+        macAddress: '52:54:00:98:ab:85'
+        name: enp1s0
+        state: up
+        type: ethernet
+    routes:
+      config:
+        - destination: 0.0.0.0/0
+          next-hop-address: 192.168.110.1
+          next-hop-interface: enp1s0
+          table-id: 254
+  interfaces:
+    - macAddress: '52:54:00:98:ab:85'
+      name: enp1s0
